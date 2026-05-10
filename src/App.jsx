@@ -1,15 +1,18 @@
 import './App.css'
-import Login from './Components/Login'
+import AppRoutes from "./utils/AppRoutes";
+import { BrowserRouter } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 function App() {
 
-  return (
-    <>
-      <div className=" h-screen">
-        <Login />
-      </div>
-   </>
-  )
+ return (
+    <BrowserRouter>
+              <Toaster />
+
+      <AppRoutes />
+    </BrowserRouter>
+  );
+
 }
 
 export default App
