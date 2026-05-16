@@ -1,8 +1,10 @@
 import { options } from "../Constant.js/contants";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const BrowseMain = ({ movies }) => {
   const [movievideo, setmovievideo] = useState(null);
+  const navigate = useNavigate();
 
   if (!movies) return null;
 
@@ -21,7 +23,6 @@ const BrowseMain = ({ movies }) => {
 
       setmovievideo(data);
 
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -31,7 +32,7 @@ const BrowseMain = ({ movies }) => {
     if (topratedMovie.length > 0) {
       fetchMoviesvideo();
     }
-  }, []);
+  }, [movies]);
 
   if (!movievideo) return <h1>Loading...</h1>;
 
@@ -51,7 +52,7 @@ const BrowseMain = ({ movies }) => {
     <h2 className="text-2xl font-bold">{topratedMovie[0].title}</h2>
     <p className="text-sm mt-1">{topratedMovie[0].overview}</p>
     <div className="flex gap-4 mt-4">
-  <button className="flex items-center gap-2 rounded-md bg-white px-6 py-2 text-lg font-semibold text-black transition hover:bg-white/80">
+  <button onClick={() => navigate(`/movie/${topratedMovie[0].id}`)} className="flex items-center gap-2 rounded-md bg-white px-6 py-2 text-lg font-semibold text-black transition hover:bg-white/80">
     ▶ Play
   </button>
 

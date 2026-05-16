@@ -7,36 +7,44 @@ const BrowseSecond = ({ movies }) => {
       <div className="flex gap-4 overflow-x-scroll scrollbar-hide">
         {movies?.results?.map((movie) => (
           <MoviesCard
-            key={movie.id}
+          key={movie.id}
+          movieid={movie.id}
             path={movie.poster_path}
           />
         ))}
       </div>
-        <div className="flex gap-4 overflow-x-scroll scrollbar-hide">
+        {/* <div className="flex gap-4 overflow-x-scroll scrollbar-hide">
         {movies?.results?.map((movie) => (
-          <MoviesCard
-            key={movie.id}
-            path={movie.poster_path}
-          />
-        ))}
-      </div>
-        <div className="flex gap-4 overflow-x-scroll scrollbar-hide">
-        {movies?.results?.map((movie) => (
-          <MoviesCard
-            key={movie.id}
-            path={movie.poster_path}
-          />
-        ))}
-      </div>
 
+          <MoviesCard
+onClick={() => console.log(movie.id)}  
+
+            key={movie.id}
+            path={movie.poster_path}
+          />
+        ))}
+      </div> */}
+        {/* <div className="flex gap-4 overflow-x-scroll scrollbar-hide">
+        {movies?.results?.map((movie) => (
+          <MoviesCard
+onClick={() => console.log(movie.id)}  
+
+            key={movie.id}
+            path={movie.poster_path}
+          />
+        ))}
+      </div> */}
+{/* 
       <div className="flex gap-4 overflow-x-scroll scrollbar-hide">
         {movies?.results?.map((movie) => (
           <MoviesCard
+onClick={() => console.log(movie.id)}  
+
             key={movie.id}
             path={movie.poster_path}
           />
         ))}
-      </div>
+      </div> */}
 
     </div>
   );

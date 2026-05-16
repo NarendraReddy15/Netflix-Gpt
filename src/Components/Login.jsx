@@ -58,7 +58,6 @@ navigate("/Browse")
         data.email,
         data.password,
       )
-
   await updateProfile(auth.currentUser,{
 displayName:data.name,
 photoURL:"https://cdn-icons-png.flaticon.com/512/149/149071.png"
